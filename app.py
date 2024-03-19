@@ -17,7 +17,7 @@ def query_strings():
 
 
 @app.route('/add', methods=['GET'])
-def query_strings():
+def add():
 
     args1 = request.args['a']
     args2 = request.args['b']

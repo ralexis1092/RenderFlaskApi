@@ -77,11 +77,22 @@ def increment():
 def view():
     
     data = {}
- 
-    # Opening JSON file
-    with open('database.json', "r") as json_file:
-        data = json.load(json_file)
-        data["Omar"] += 5
-        
 
-    return '''<h1>Alexis: {}<br/>Omar:{}'''.format(data["Alexis"],data["Omar"]) if data else '''<h1>Database is empty<h1>'''
+    try:
+        # Opening JSON file
+        with open('database.json', "r") as json_file:
+            data = json.load(json_file)
+    except:
+        return '''<h1>Database is empty<h1>'''
+    
+    count = 0 
+    str = "<h1>"
+    for key in data:
+        str += data[key] + ": " + key
+        
+        count += 1
+        if count < len(data):
+            str += "<br />"
+
+    str += "<h1>"    
+    return str if data else '''<h1>Database is empty<h1>'''

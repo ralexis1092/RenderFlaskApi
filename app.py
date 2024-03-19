@@ -86,13 +86,14 @@ def view():
         return '''<h1>Database is empty<h1>'''
     
     count = 0 
-    str = "<h1>"
+    s = "<h1>"
     for key in data:
-        str += str(key) + ": " + str(data[key])
+        print(key)
+        s += str(key) + ": " + str(data[key])
         
         count += 1
         if count < len(data):
-            str += "<br />"
+            s += "<br />"
 
-    str += "<h1>"    
-    return str if data else '''<h1>Database is empty<h1>'''
+    s += "<h1>"    
+    return s if data else '''<h1>Database is empty<h1>'''

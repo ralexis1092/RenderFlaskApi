@@ -22,4 +22,4 @@ def add():
     args1 = request.args['a']
     args2 = request.args['b']
 
-    return '''<h1>The Sum is {}</h1>''' .format(sum(args1,args2))
+    return '''<h1>The Sum is {}</h1>''' .format(int(args1) + int(args2)) if args1.isnumeric() and args2.isnumeric() else '''<h1>The Combined String is {}</h1>''' .format(args1 + args2)

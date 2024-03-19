@@ -61,8 +61,8 @@ def increment():
     try:
         with open('database.json', "r") as json_file:
             data = json.load(json_file)
-            data["Omar"] += 5
-            data["Alexis"] += 5
+            for key in data:
+                data["key"] += 5
             # for reading nested data [0] represents
             # the index value of the list
 
@@ -88,7 +88,7 @@ def view():
     count = 0 
     str = "<h1>"
     for key in data:
-        str += data[key] + ": " + key
+        str += str(key) + ": " + str(data[key])
         
         count += 1
         if count < len(data):

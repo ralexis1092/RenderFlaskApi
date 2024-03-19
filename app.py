@@ -88,7 +88,6 @@ def view():
     count = 0 
     s = "<h1>"
     for key in data:
-        print(key)
         s += str(key) + ": " + str(data[key])
         
         count += 1

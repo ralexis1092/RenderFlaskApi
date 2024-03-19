@@ -62,7 +62,7 @@ def increment():
         with open('database.json', "r") as json_file:
             data = json.load(json_file)
             for key in data:
-                data["key"] += 5
+                data[key] += 5
             # for reading nested data [0] represents
             # the index value of the list
 
